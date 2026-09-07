@@ -1,0 +1,423 @@
+@import "tailwindcss";
+
+/* FIELDCORE Premium Industrial Design System */
+
+:root {
+  --bg-dark: #0a0c0e;
+  --bg-charcoal: #111418;
+  --bg-slate: #161a20;
+  --bg-card-hover: #1f252e;
+  
+  --border-muted: rgba(255, 255, 255, 0.1);
+  --border-agri: rgba(76, 175, 80, 0.4);
+  --border-orange: rgba(230, 126, 34, 0.5);
+  
+  --color-agri-green: #2e7d32;
+  --color-agri-bright: #388e3c;
+  --color-agri-lime: #4caf50;
+  --color-olive: #4a6b36;
+  --color-steel: #8c9ba5;
+  --color-steel-light: #b0bec5;
+  --color-earth: #5d4037;
+  --color-safety-orange: #e67e22;
+  --color-safety-yellow: #f39c12;
+  --color-white: #ffffff;
+  --color-offwhite: #f8f9fa;
+  --color-text-muted: #9ba8b5;
+  
+  --font-heading: 'Space Grotesk', 'Sora', sans-serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: clip;
+  background-color: var(--bg-dark);
+  color: var(--color-offwhite);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #232933;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-agri-lime);
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  font-weight: 700;
+}
+
+/* Glowing text gradients */
+.text-gradient-agri {
+  background: linear-gradient(135deg, #ffffff 0%, #4caf50 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-orange {
+  background: linear-gradient(135deg, #ffffff 0%, #f39c12 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Industrial Grid & Blueprint Background Patterns */
+.bg-grid-pattern {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(76, 175, 80, 0.15) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+/* Badges & Labels */
+.badge-industrial {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(46, 125, 50, 0.18);
+  border: 1px solid #4caf50;
+  color: #4caf50;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(76, 175, 80, 0.2);
+}
+
+.badge-orange {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(230, 126, 34, 0.18);
+  border: 1px solid #e67e22;
+  color: #f39c12;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  box-shadow: 0 0 15px rgba(230, 126, 34, 0.2);
+}
+
+.badge-demo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.65rem;
+  background: rgba(243, 156, 18, 0.2);
+  border: 1px solid #f39c12;
+  color: #f39c12;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 2px;
+}
+
+/* Glass Panels & Industrial Cards */
+.card-machinery {
+  background: #15181e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-machinery:hover {
+  transform: translateY(-5px);
+  border-color: #4caf50;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 25px rgba(76, 175, 80, 0.25);
+}
+
+/* Action Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.9rem 1.85rem;
+  background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  border: 1px solid #4caf50;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 18px rgba(46, 125, 50, 0.4);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.6);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.9rem 1.85rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.btn-orange {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.9rem 1.85rem;
+  background: linear-gradient(135deg, #e67e22 0%, #d35400 100%);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  border: 1px solid #f39c12;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 18px rgba(230, 126, 34, 0.4);
+}
+
+.btn-orange:hover {
+  background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(230, 126, 34, 0.6);
+}
+
+/* Image Zoom Effect */
+.img-zoom-container {
+  overflow: hidden;
+}
+.img-zoom-container img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.img-zoom-container:hover img {
+  transform: scale(1.08);
+}
+
+/* Table styling */
+.table-industrial {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-industrial th {
+  background: #111418;
+  padding: 1.1rem 1.35rem;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-steel);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.table-industrial td {
+  padding: 1.1rem 1.35rem;
+  font-size: 0.95rem;
+  color: var(--color-offwhite);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.table-industrial tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.table-industrial tr:hover {
+  background: rgba(76, 175, 80, 0.08);
+}
+
+/* Container constraints */
+.container-custom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   ✨ PREMIUM INDUSTRIAL ANIMATIONS & SHIMMER EFFECTS
+   ========================================================================== */
+
+/* Shimmer Light Beam Effect for Cards & Buttons */
+.card-machinery, .btn-primary, .btn-orange, .shimmer-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-machinery::after, .btn-primary::after, .btn-orange::after, .shimmer-box::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -75%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  transition: all 0.75s ease-in-out;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.card-machinery:hover::after, .btn-primary:hover::after, .btn-orange:hover::after, .shimmer-box:hover::after {
+  left: 125%;
+  opacity: 1;
+}
+
+/* Keyframe Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatOrb {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.05);
+  }
+}
+
+@keyframes radarPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(76, 175, 80, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+  }
+}
+
+@keyframes pulseGlowGreen {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(76, 175, 80, 0.3), inset 0 0 10px rgba(76, 175, 80, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(76, 175, 80, 0.6), inset 0 0 15px rgba(76, 175, 80, 0.3);
+  }
+}
+
+@keyframes pulseGlowOrange {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(230, 126, 34, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(230, 126, 34, 0.6);
+  }
+}
+
+@keyframes gridSweep {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 48px 48px;
+  }
+}
+
+/* Animation Utility Classes */
+.animate-fade-up {
+  animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-float-orb {
+  animation: floatOrb 6s ease-in-out infinite;
+}
+
+.radar-pulse {
+  animation: radarPulse 2s infinite;
+}
+
+.badge-industrial {
+  animation: pulseGlowGreen 4s ease-in-out infinite;
+}
+
+.badge-orange {
+  animation: pulseGlowOrange 4s ease-in-out infinite;
+}
+
+.bg-grid-pattern {
+  animation: gridSweep 20s linear infinite;
+}
+
